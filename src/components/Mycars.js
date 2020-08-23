@@ -6,19 +6,11 @@ class Mycars extends Component{
     noCopy = () =>{
         alert('cope pas')
     }
-
-    addStyle = (e) =>{
-
-        if (e.target.classList.contains('styled')) {
-            e.target.classList.remove('styled')
-        } else {
-            e.target.classList.add('styled')
-        }
-    }
+    
     render(){
         return (
             <div>
-                <h1 onMouseOver={this.addStyle}>{this.props.title}</h1>
+                <h1>{this.props.title}</h1>
 
                 <p onCopy={this.noCopy}>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
 
