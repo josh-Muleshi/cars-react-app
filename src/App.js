@@ -14,12 +14,19 @@ class App extends Component {
     })
   }
 
+  changeViaparam = (titre) => {
+    this.setState({
+      titre: titre
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <Mycars title={this.state.titre}/>
 
         <button onClick={this.changeTitle}>Changer le nom en dur</button>
+        <button onClick={() => this.changeViaparam('titre via param')}>Changer via param</button>
       </div>
     );
   } 
