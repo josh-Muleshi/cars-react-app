@@ -20,13 +20,20 @@ class App extends Component {
     })
   }
 
+  changeViaBind = (param) => {
+    this.setState({
+      titre: param
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <Mycars title={this.state.titre}/>
 
         <button onClick={this.changeTitle}>Changer le nom en dur</button>
-        <button onClick={() => this.changeViaparam('titre via param')}>Changer via param</button>
+        <button onClick={() => this.changeViaparam('titre via param')}>via param</button>
+        <button onClick={this.changeViaBind.bind(this, 'Titre via bind')}>via bind</button>
       </div>
     );
   } 
