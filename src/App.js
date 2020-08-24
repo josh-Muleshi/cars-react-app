@@ -26,6 +26,12 @@ class App extends Component {
     })
   }
 
+  changeViaInput = (e) =>{
+    this.setState({
+      titre: e.target.value
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -34,6 +40,7 @@ class App extends Component {
         <button onClick={this.changeTitle}>Changer le nom en dur</button>
         <button onClick={() => this.changeViaparam('titre via param')}>via param</button>
         <button onClick={this.changeViaBind.bind(this, 'Titre via bind')}>via bind</button>
+        <input type="text" onChange= {this.changeViaInput} value={this.state.titre}/>
       </div>
     );
   } 
